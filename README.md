@@ -27,6 +27,3 @@ I've developed a simple URL shortener using Node.js, Express.js, and MongoDB. To
 ```bash
    cd SHORT-URL
    npm install
-
-
-
