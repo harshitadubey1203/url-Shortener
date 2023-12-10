@@ -3,7 +3,59 @@
 <head>
     <style>
         body {
-            font-family: 'Segoe UI',Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 15px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
         }
     </style>
     <meta charset="UTF-8">
@@ -13,12 +65,15 @@
 <body>
     <h1>Signup</h1>
     <form action="/user" method="post">
-        <label>Full Name</label>
-        <input type="text" required name="name" />
-        <label>Email</label>
-        <input type="text" required name="email" />
-        <label>Password</label>
-        <input type="text" required name="password" />
+        <label for="name">Full Name</label>
+        <input type="text" required name="name" id="name" />
+
+        <label for="email">Email</label>
+        <input type="text" required name="email" id="email" />
+
+        <label for="password">Password</label>
+        <input type="password" required name="password" id="password" />
+
         <button type="submit">Signup</button>
     </form>
 </body>

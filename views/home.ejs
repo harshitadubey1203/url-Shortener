@@ -3,26 +3,81 @@
 <head>
     <style>
         body {
-            font-family: 'Segoe UI',Verdana, Geneva, Tahoma, sans-serif;
+            font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 15px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: #fff;
         }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
-
+    <title>URL Shortener</title>
 </head>
 <body>
     <h1>URL Shortener</h1>
     <% if (locals.id){ %>
-    <p>URL Generated: http://localhost:8001/url/<%= id %></p>
-
+        <p>URL Generated: http://localhost:8001/url/<%= id %></p>
     <% } %>
     <div>
         <form method="POST" action="/url">
-            <label>Enter your Original URL</label>
-            <input type="text" 
-            name="url" 
-            placeholder="https://example.com"/>
+            <label for="url">Enter your Original URL</label>
+            <input type="text" name="url" id="url" placeholder="https://example.com"/>
             <button type="submit">Generate</button>
         </form>
     </div>
@@ -45,10 +100,8 @@
                         </tr>
                     <% }); %>
                 </tbody>
-                
             </table>
         <% } %>
     </div>
-      
 </body>
 </html>
